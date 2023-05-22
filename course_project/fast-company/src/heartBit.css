@@ -1,0 +1,19 @@
+.heartBit {
+    animation: heartBit;
+    transform-origin: bottom left;
+    animation-duration: 0.15s;
+    animation-iteration-count: 2;
+}
+
+.huver:hover {
+    fill: HotPink;
+}
+
+@keyframes heartBit {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1.05, 1.05);
+    }
+}
