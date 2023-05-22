@@ -1,92 +1,135 @@
-import React, { useState } from 'react';
-import api from '../api';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { paginate } from "../utils/paginate";
+import Pagination from "./pagination";
+import api from "../api";
+import GroupList from "./groupList";
+import SearchStatus from "./searchStatus";
+import UsersTable from "./usersTable";
+import _ from "lodash";
 
 const Users = () => {
-  ///////////////////////////////////////
-  const [users, setUsers] = useState(api.users.fetchAll());
-  ///////////////////////////////////////
-  const handleDelete = (userId) => {
-    let newArr = users.filter((i) => i._id !== userId);
-    setUsers(newArr);
-  };
-  ///////////////////////////////////////
-  const renderPhrase = (number) => {
-    let lastCount = +String(number)[String(number).length - 1];
-    let penCount = +String(number)[String(number).length - 2];
-    let tusa;
-    if (lastCount === 1 && penCount !== 1) tusa = ' тусанёт';
-    else tusa = ' тусанут';
-    let man; /* 2 3 4 */
-    if (
-      (lastCount === 2 || lastCount === 3 || lastCount === 4) &&
-      penCount !== 1
-    )
-      man = ' человека';
-    else man = ' человек';
-    ///////////////////////////////////////
-    return number !== 0 ? (
-      <>
-        <div className="p-2 m-1 fs-6 badge bg-primary">
-          {number} {man} {tusa} с тобой сегодня
-        </div>
-      </>
-    ) : (
-      <>
-        <div className="p-2 m-1 fs-6 badge bg-danger">
-          Никто с тобой не тусанёт
-        </div>
-      </>
-    );
-  };
-  return (
-    <>
-      {renderPhrase(users.length)}
-      <table className="table table-group-divider">
-        <thead>
-          <tr>
-            <th scope="col">Имя</th>
-            <th scope="col">Качества</th>
-            <th scope="col">Профессия</th>
-            <th scope="col">Встретился, раз</th>
-            <th scope="col">Оценка</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* /////////////////////////////////////// */}
-          {users.map((i) => {
-            return (
-              <tr id={i._id} key={i.name}>
-                <td key="1">{i.name}</td>
-                <td key="2">
-                  {i.qualities.map((i) => {
-                    const name = `m-1 badge bg-${i.color}`;
-                    return (
-                      <span className={name} key={i.name}>
-                        {i.name}
-                      </span>
-                    );
-                  })}
-                </td>
-                <td key="3">{i.profession.name}</td>
-                <td key="4">{i.completedMeetings}</td>
-                <td key="5">{i.rate} /5</td>
-                <td key="bttn">
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(i._id)}
-                  >
-                    delete
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-          {/* /////////////////////////////////////// */}
-        </tbody>
-      </table>
-    </>
-  );
+    const [currentPage, setCurrentPage] = useState(1);
+    const [professions, setProfession] = useState();
+    const [selectedProf, setSelectedProf] = useState();
+    const initialSort = { iter: "name", order: "asc" };
+    const [sortBy, setSortBy] = useState(initialSort);
+    const pageSize = 4;
+
+    const [users, setUsers] = useState();
+    useEffect(() => {
+        api.users.fetchAll().then((data) => setUsers(data));
+        /* api.users.getById().then((data) => setUsers(data)); */ // !!!!!!!!!!!
+        api.professions.fetchAll().then((data) => setProfession(data));
+    }, []);
+
+    // Добавил возврат на 1ю страницу при сортировке
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedProf]);
+
+    const handleDelete = (userId) => {
+        setUsers(users.filter((user) => user._id !== userId));
+    };
+
+    // При сортировке букмарков и последующих кликах на сердечки они почему-то автоматически сортируются,
+    // имхо неправильное поведение.
+    const handleToggleBookMark = (id) => {
+        setUsers(
+            users.map((user) => {
+                if (user._id === id) {
+                    return { ...user, bookmark: !user.bookmark };
+                }
+                return user;
+            })
+        );
+    };
+
+    const handleProfessionSelect = (item) => {
+        setSelectedProf(item);
+    };
+
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex);
+    };
+
+    const handleSort = (item) => {
+        setSortBy(item);
+    };
+
+    if (users) {
+        //
+        const filteredUsers = selectedProf
+            ? users.filter(
+                  (user) =>
+                      JSON.stringify(user.profession) ===
+                      JSON.stringify(selectedProf)
+              )
+            : users;
+
+        const count = filteredUsers.length;
+
+        const sortedUsers = _.orderBy(
+            filteredUsers,
+            [sortBy.path],
+            [sortBy.order]
+        );
+
+        const usersCrop = paginate(sortedUsers, currentPage, pageSize);
+        const clearFilter = () => {
+            setSelectedProf();
+        };
+
+        // Переход на прошлую страницу, если юзеров на странице больше нет
+        if (usersCrop.length < 1 && currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+
+        return (
+            <div className="d-flex">
+                {professions && (
+                    <div className="d-flex flex-column flex-shrink-0 p-3">
+                        <GroupList
+                            selectedItem={selectedProf}
+                            items={professions}
+                            onItemSelect={handleProfessionSelect}
+                        />
+                        <button
+                            className="btn btn-secondary mt-2"
+                            onClick={clearFilter}
+                        >
+                            {" "}
+                            Очистить
+                        </button>
+                    </div>
+                )}
+                <div className="d-flex flex-column">
+                    <SearchStatus length={count} />
+                    {count > 0 && (
+                        <UsersTable
+                            users={usersCrop}
+                            onSort={handleSort}
+                            selectedSort={sortBy}
+                            onToggleBookMark={handleToggleBookMark}
+                            onDelete={handleDelete}
+                        />
+                    )}
+                    <div className="d-flex justify-content-center">
+                        <Pagination
+                            itemsCount={count}
+                            pageSize={pageSize}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
+    } else return "loading...";
+};
+
+Users.propTypes = {
+    users: PropTypes.array
 };
 
 export default Users;
