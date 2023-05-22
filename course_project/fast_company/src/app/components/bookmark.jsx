@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+//
 const BookMark = ({ status, onClick, ...rest }) => {
     /* console.log(rest); */ // empty
     // Клосест правильнее, иначе можно кликнуть на path.
