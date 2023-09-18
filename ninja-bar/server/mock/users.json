@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Кирилл",
+    "surname": "Норченко",
+    "lastname": "Константинович",
+    "age": 34,
+    "email": "podpalmoi@gmail.com",
+    "password": 2222,
+    "image": "неа",
+    "sex": "мужской",
+    "profession": "программист",
+    "country": "Россия",
+    "region": "Мурманская область",
+    "city": "Мончегосрк",
+    "street": "Климентьева 11",
+    "apartment": 164,
+    "tel": 0
+  }
+]
