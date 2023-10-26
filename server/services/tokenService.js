@@ -17,7 +17,7 @@ export const generate = (payload) => {
   return { accessToken, refreshToken, expiresIn: 3600 };
 };
 
-// Ф-ия сохранения токена для конкретного юзера
+// Ф-ия сохранения токена (в коллекцию Token) для конкретного юзера (по userId)
 export const save = async (userId, refreshToken) => {
   // Поиск в БД токенов конкретного юзера через модель (как понял)
   const data = await Token.findOne({ user: userId });
@@ -26,7 +26,7 @@ export const save = async (userId, refreshToken) => {
     data.refreshToken = refreshToken;
     return data.save();
   }
-  // Создаём запись в БД и возвращаем токен
+  // Создаём запись в БД токенов и возвращаем токен
   const token = Token.create({ user: userId, refreshToken });
   return token;
 };
@@ -34,6 +34,14 @@ export const save = async (userId, refreshToken) => {
 export const validateRefresh = (refreshToken) => {
   try {
     return jwt.verify(refreshToken, config.get("refreshSecret"));
+  } catch (e) {
+    return null;
+  }
+};
+
+export const validateAccess = (accessToken) => {
+  try {
+    return jwt.verify(accessToken, config.get("accessSecret"));
   } catch (e) {
     return null;
   }

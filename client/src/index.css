@@ -1,0 +1,165 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.upper {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(100vh - 60px);
+    left: calc(100vw - 75px);
+    visibility: hidden;
+    border: 2px solid rgb(214, 138, 52);
+}
+.upper_visible {
+    visibility: visible;
+    transition: all;
+    transition-duration: 3s;
+}
+.upper_1 {
+    height: 3px;
+    width: 16px;
+    position: absolute;
+    top: 13px;
+    left: 5px;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    background-color: rgb(214, 138, 52);
+}
+.upper_1_vsb {
+    transition: all;
+    transition-duration: 3s;
+}
+.upper_2 {
+    height: 3px;
+    width: 16px;
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    background-color: rgb(214, 138, 52);
+}
+.upper_2_vsb {
+    transition: all;
+    transition-duration: 3s;
+}
+
+a.active p {
+    color: rgb(214, 138, 52) !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(214, 138, 52);
+}
+
+body,
+#navbar {
+    min-width: 360px !important;
+}
+
+.resize {
+    transition-duration: 0.3s;
+    transition-property: all;
+    transform: scale(1);
+}
+
+.resize:hover {
+    transition-duration: 0.5s;
+    transition-property: all;
+    transform: scale(1.03);
+}
+.borderColor1,
+.borderColor2,
+.borderColor3 {
+    transition-duration: 0.3s;
+    transition-property: all;
+}
+
+.borderColor1:hover,
+.borderColor2:hover,
+.borderColor3:hover {
+    transition-duration: 0.5s;
+    transition-property: all;
+    border-color: rgb(214, 138, 52);
+}
+
+.true-invalid-feedback {
+    /* допил дисфункции бутстрапа, с классом Invalid-feedback инупты скачут, что неверно */
+    width: 100%;
+    margin-top: 0.2rem;
+    font-size: 0.875em;
+    color: #ea868f;
+}
+.cursor {
+    cursor: pointer !important;
+}
+.mt-n2 {
+    margin-top: -0.5rem !important;
+}
+.borderRightFix {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+@media (max-width: 1142px) {
+    [data-position="mq-1094"] {
+        width: 100% !important;
+    }
+    [data-order="mq-1094"] {
+        flex-direction: column-reverse;
+    }
+    [data-hide="mq-1094"] {
+        display: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    [data-hide="mq-900"] {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    [data-wrap="mq-746"] {
+        flex-wrap: wrap !important;
+    }
+    [data-min-width="mq-746"] {
+        min-width: 360px;
+    }
+    [data-hide="mq-746"] {
+        display: none !important;
+    }
+    [data-reposition="mq-746"] {
+        justify-content: center !important;
+    }
+    [data-resize="mq-746"] {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+@media (max-width: 540px) {
+    [data-hide="mq-532"] {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    [data-hide="mq-500"] {
+        display: none !important;
+    }
+    [data-margin-end-0="mq-500"] {
+        margin-right: 0 !important;
+    }
+}
+@media (max-width: 450px) {
+    [data-resize="mq-412"] {
+        width: 340px !important;
+    }
+    [data-shrink="mq-400"] {
+        width: 20px !important;
+        margin-right: 20px;
+    }
+    [data-move="mq-400"] {
+        margin-left: 8% !important;
+    }
+}

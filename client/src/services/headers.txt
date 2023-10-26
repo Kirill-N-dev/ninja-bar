@@ -1,0 +1,11 @@
+Чтобы они были видны в headers браузера, надо в нужном методе писать:
+
+const jwt = localStorageService.getAccessToken();
+
+и 3-им аргументом добавить:
+
+ {
+                headers: {
+                    authorization: "Bearer " + jwt
+                }
+            }

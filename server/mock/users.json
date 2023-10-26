@@ -14,6 +14,9 @@
     "city": "Мончегосрк",
     "street": "Климентьева 11",
     "apartment": 164,
-    "tel": 0
+    "tel": 0,
+    "company": "Ninja baaaaar",
+    "cart": [],
+    "isSeller": false
   }
 ]

@@ -4,15 +4,15 @@ import config from "config";
 import chalk from "chalk";
 import initDatabase from "./startUp/initDatabase.js";
 import routes from "./routes/index.js";
+import cors from "cors";
 
 const app = express();
-//
-// MongoDB connection login and pass
 
-// коммент затычка для гита
+// MongoDB connection login and pass
 /* podpalmoi Uj7k5W1iT2skmnch */
 
 // Мидлверы
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -39,8 +39,8 @@ const start = async () => {
     app.listen(PORT, () =>
       console.log(chalk.blue("Server has been started on port:", PORT))
     );
-  } catch (er) {
-    console.log("1234567890");
+  } catch (e) {
+    console.log("Ошибка при запуске сервера.");
     process.exit(1);
   }
 };

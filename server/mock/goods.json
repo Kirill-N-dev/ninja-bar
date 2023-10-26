@@ -1,0 +1,240 @@
+[
+  {
+    "id": 1,
+    "name": "пицца Пепперони",
+    "desc": "Классическая пицца с нежным тянущимся сыром, ароматной салями и шампиньонами",
+    "img_url": [
+      "https://foodtodo.ru/image/cache/catalog/pizza/kisspng-pizza-hut-sushi-pizza-delivery-milano-pizza-capricciosa-shopshark-5b62bf523b0ab6.9214515615331981622418-800x800.png",
+      "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548275_66-p-pitstsa-na-belom-fone-102.png",
+      "https://for-grib.ru/800/600/http/static.tildacdn.com/tild3631-3531-4232-b436-653937393839/sshampinonami-remove.png"
+    ],
+    "ingredients": "Томатный соус, сыр Моцарелла, шампиньоны, салями Пепперони, огурцы маринованные",
+    "weight": 400,
+    "price": 700,
+    "type": "pizzas"
+  },
+  {
+    "id": 2,
+    "name": "пицца Марринара",
+    "desc": "Замечательная аутентичная итальянская пицца, которая придаст колорита вашему вечеру",
+    "img_url": [
+      "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548275_66-p-pitstsa-na-belom-fone-102.png",
+      "https://for-grib.ru/800/600/http/static.tildacdn.com/tild3631-3531-4232-b436-653937393839/sshampinonami-remove.png",
+      "https://foodtodo.ru/image/cache/catalog/pizza/kisspng-pizza-hut-sushi-pizza-delivery-milano-pizza-capricciosa-shopshark-5b62bf523b0ab6.9214515615331981622418-800x800.png"
+    ],
+    "ingredients": "Соус Маринара, томаты черри, сыр Пармезан, чеснок, анчоусы, капперсы",
+    "weight": 400,
+    "price": 600,
+    "type": "pizzas"
+  },
+  {
+    "id": 3,
+    "name": "пицца Неаполитанская",
+    "desc": "Прекрасное сочетание прованских трав и томатов, выращенных на просторах Неаполя",
+    "img_url": [
+      "https://for-grib.ru/800/600/http/static.tildacdn.com/tild3631-3531-4232-b436-653937393839/sshampinonami-remove.png",
+      "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548275_66-p-pitstsa-na-belom-fone-102.png",
+      "https://foodtodo.ru/image/cache/catalog/pizza/kisspng-pizza-hut-sushi-pizza-delivery-milano-pizza-capricciosa-shopshark-5b62bf523b0ab6.9214515615331981622418-800x800.png"
+    ],
+    "ingredients": "Томаты Сан-марцано, сыр Пармезан, сыр Моцарелла, анчоусы, травы",
+    "weight": 400,
+    "price": 700,
+    "type": "pizzas"
+  },
+  {
+    "id": 4,
+    "name": "пицца Регина",
+    "desc": "Неповторимый колорит адриатического побережья с изюминкой в виде чёрных оливок",
+    "img_url": [
+      "https://mykaleidoscope.ru/x/uploads/posts/2022-09/thumbs/1663621610_39-mykaleidoscope-ru-p-pitstsa-pepperoni-yeda-vkontakte-41.png",
+      "https://donpiton.ru/wp-content/uploads/2020/12/%D0%9A%D1%80%D0%B5%D0%B2%D0%B5%D1%82%D0%BE%D1%87%D0%BA%D0%B0-768x768.png",
+      "https://static.tildacdn.com/tild3635-6439-4636-a262-643838336262/__.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, ветчина, шампиньоны, чёрные оливки",
+    "weight": 400,
+    "price": 600,
+    "type": "pizzas"
+  },
+  {
+    "id": 5,
+    "name": "пицца Капричоза",
+    "desc": "Пикантное сочетание запечённой ветчины, шампиньонов, моцареллы и пряных трав",
+    "img_url": [
+      "https://donpiton.ru/wp-content/uploads/2020/12/%D0%9A%D1%80%D0%B5%D0%B2%D0%B5%D1%82%D0%BE%D1%87%D0%BA%D0%B0-768x768.png",
+      "https://mykaleidoscope.ru/x/uploads/posts/2022-09/thumbs/1663621610_39-mykaleidoscope-ru-p-pitstsa-pepperoni-yeda-vkontakte-41.png",
+      "https://static.tildacdn.com/tild3635-6439-4636-a262-643838336262/__.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, ветчина, шампиньоны, артишок, зелень",
+    "weight": 400,
+    "price": 700,
+    "type": "pizzas"
+  },
+  {
+    "id": 6,
+    "name": "пицца Фунги",
+    "desc": "Классическое сочетание моцареллы и сосисок вернёт вас в тёплые воспоминания",
+    "img_url": [
+      "https://static.tildacdn.com/tild3635-6439-4636-a262-643838336262/__.png",
+      "https://donpiton.ru/wp-content/uploads/2020/12/%D0%9A%D1%80%D0%B5%D0%B2%D0%B5%D1%82%D0%BE%D1%87%D0%BA%D0%B0-768x768.png",
+      "https://mykaleidoscope.ru/x/uploads/posts/2022-09/thumbs/1663621610_39-mykaleidoscope-ru-p-pitstsa-pepperoni-yeda-vkontakte-41.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, сосиски, шампиньоны",
+    "weight": 400,
+    "price": 500,
+    "type": "pizzas"
+  },
+  {
+    "id": 7,
+    "name": "пицца Карбонара",
+    "desc": "Популярная сицилийская пицца с пастовым обертоном",
+    "img_url": [
+      "https://alibi-lg.ru/wp-content/uploads/2022/10/pizza_italia.png",
+      "https://foodorderpicker.ru/static/media/8p.bab20bb576cd77f3bb1c.png",
+      "https://kwgrabbapizza.ca/wp-content/uploads/2022/08/International-Combo-ButterChicken.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, бекон, зелень прованса, сливочный соус",
+    "weight": 400,
+    "price": 600,
+    "type": "pizzas"
+  },
+  {
+    "id": 8,
+    "name": "пицца Нью Йорк",
+    "desc": "Американская классика",
+    "img_url": [
+      "https://foodorderpicker.ru/static/media/8p.bab20bb576cd77f3bb1c.png",
+      "https://alibi-lg.ru/wp-content/uploads/2022/10/pizza_italia.png",
+      "https://kwgrabbapizza.ca/wp-content/uploads/2022/08/International-Combo-ButterChicken.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, ветчина, шампиньоны",
+    "weight": 400,
+    "price": 600,
+    "type": "pizzas"
+  },
+  {
+    "id": 9,
+    "name": "пицца Цезарь",
+    "desc": "Шикарная пицца из редких видов итальянских грибов с моцареллой",
+    "img_url": [
+      "https://kwgrabbapizza.ca/wp-content/uploads/2022/08/International-Combo-ButterChicken.png",
+      "https://foodorderpicker.ru/static/media/8p.bab20bb576cd77f3bb1c.png",
+      "https://alibi-lg.ru/wp-content/uploads/2022/10/pizza_italia.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, шампиньоны, лисички, гриб цезарь",
+    "weight": 400,
+    "price": 2000,
+    "type": "pizzas"
+  },
+  {
+    "id": 10,
+    "name": "пицца Чикен",
+    "desc": "Нежная курочка в томатном соусе и моцарелла с гаудой",
+    "img_url": [
+      "https://steamuserimages-a.akamaihd.net/ugc/928171408587186327/401EF8B8C1E37EBA242959EE6CBDB4806D00106F/?imw=512&amp;imh=512&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true",
+      "https://alibi-lg.ru/wp-content/uploads/2022/10/pizza_italia.png",
+      "https://foodorderpicker.ru/static/media/8p.bab20bb576cd77f3bb1c.png"
+    ],
+    "ingredients": "Томатный соус, томаты, сыр Моцарелла, сыр Гауда, курица",
+    "weight": 400,
+    "price": 700,
+    "type": "pizzas"
+  },
+  {
+    "id": 16,
+    "name": "Кола",
+    "desc": "Прохладный освежающий вкус, знакомый с самого детства",
+    "img_url": [
+      "https://кушайсуши.рф/image/catalog/magnitigorsk/images/menu/napitki/cola.png",
+      "https://316024.selcdn.ru/wiget/fe470000-906b-0025-0952-08d894bd26cd/fd97d358-c5db-4185-bafc-92916c782a2e_Large_.png",
+      "https://usercontent.one/wp/www.benaholl.de/wp-content/uploads/2021/03/image_G-003_1_600x600.png"
+    ],
+    "ingredients": "Вода, ортофосфорная кислота, краситель (сахарный колер), сахар, ароматизатор (экстракт ванили)",
+    "weight": 500,
+    "price": 200,
+    "type": "drinks"
+  },
+  {
+    "id": 17,
+    "name": "Спрайт",
+    "desc": "Прохладительный напиток со вкусом лимона и лайма",
+    "img_url": [
+      "https://316024.selcdn.ru/wiget/fe470000-906b-0025-0952-08d894bd26cd/fd97d358-c5db-4185-bafc-92916c782a2e_Large_.png",
+      "https://кушайсуши.рф/image/catalog/magnitigorsk/images/menu/napitki/cola.png",
+      "https://usercontent.one/wp/www.benaholl.de/wp-content/uploads/2021/03/image_G-003_1_600x600.png"
+    ],
+    "ingredients": "Вода, краситель, сахар, ароматизатор (цитраль)",
+    "weight": 500,
+    "price": 200,
+    "type": "drinks"
+  },
+  {
+    "id": 18,
+    "name": "Фанта",
+    "desc": "Освежающий напиток со вкусом апельсина",
+    "img_url": [
+      "https://usercontent.one/wp/www.benaholl.de/wp-content/uploads/2021/03/image_G-003_1_600x600.png",
+      "https://кушайсуши.рф/image/catalog/magnitigorsk/images/menu/napitki/cola.png",
+      "https://316024.selcdn.ru/wiget/fe470000-906b-0025-0952-08d894bd26cd/fd97d358-c5db-4185-bafc-92916c782a2e_Large_.png"
+    ],
+    "ingredients": "Вода, краситель, сахар, ароматизатор (цитраль)",
+    "weight": 500,
+    "price": 200,
+    "type": "drinks"
+  },
+  {
+    "id": 22,
+    "name": "пиво Велкопоповецкий козёл",
+    "desc": "Безалкогольное",
+    "img_url": [
+      "https://img-s.wfolio.com/x/bbFTO0myahPbufojG9jaFVEUL-ww1mio/uzUfFpTbVANPwcLPtWyXdeauBQlljSlx/UU-p69DGpgjj3V1g7n0OxNXfEcP8xvZx/BJ4j-jLImBgzjx8IC6R37872hEX4_ew1/RZnVBRSqL_B9aLrcZ2DC5w.png",
+      "https://кушайсуши.рф/image/catalog/magnitigorsk/images/menu/napitki/cola.png",
+      "https://316024.selcdn.ru/wiget/fe470000-906b-0025-0952-08d894bd26cd/fd97d358-c5db-4185-bafc-92916c782a2e_Large_.png"
+    ],
+    "ingredients": "Вода, хмель, ячмень обжаренный, хмелепродукты",
+    "weight": 500,
+    "price": 300,
+    "type": "drinks"
+  },
+  {
+    "id": 11,
+    "name": "соус Грибной",
+    "desc": "Придаст вашим блюдам сливочно-грибной акцент",
+    "img_url": [
+      "http://fastfuddomoy.ru/d/sup_gribnoj_s_chipami.png",
+      "https://media.leverans.ru/product_images_inactive/ufa/sushimania/s33_1.png",
+      "https://static.tildacdn.com/tild3963-6563-4365-b036-336330386437/-removebg-preview.png"
+    ],
+    "ingredients": "Сливки, сахар, соль, вода, шампиньоны, уксусная кислота, специи",
+    "weight": 50,
+    "price": 150,
+    "type": "sauces"
+  },
+  {
+    "id": 13,
+    "name": "соус Чили",
+    "desc": "Благодаря перцам 'Холопеньо' соус особенно вкуснен и экстремально остр",
+    "img_url": [
+      "https://media.leverans.ru/product_images_inactive/ufa/sushimania/s33_1.png",
+      "http://fastfuddomoy.ru/d/sup_gribnoj_s_chipami.png",
+      "https://static.tildacdn.com/tild3963-6563-4365-b036-336330386437/-removebg-preview.png"
+    ],
+    "ingredients": "Вода, сахар, соль, пряности, томаты, перец Холопеньо",
+    "weight": 50,
+    "price": 100,
+    "type": "sauces"
+  },
+  {
+    "id": 14,
+    "name": "соус Вассаби",
+    "desc": "Для начинающих самураев",
+    "img_url": [
+      "https://static.tildacdn.com/tild3963-6563-4365-b036-336330386437/-removebg-preview.png",
+      "http://fastfuddomoy.ru/d/sup_gribnoj_s_chipami.png",
+      "https://media.leverans.ru/product_images_inactive/ufa/sushimania/s33_1.png"
+    ],
+    "ingredients": "Вода, сахар, соль, порошок японского хрена 'Вассаби', уксусная кислота",
+    "weight": 50,
+    "price": 150,
+    "type": "sauces"
+  }
+]
