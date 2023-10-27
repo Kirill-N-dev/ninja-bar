@@ -16,7 +16,6 @@ const MainPage = () => {
     useEffect(() => {
         dispatch(filterGoods(truePathName, sortBy));
         setSortBy(undefined);
-        console.log("случился Эффект");
     }, []);
 
     return <GoodsList setSortBy={setSortBy} pathname={truePathName} />;

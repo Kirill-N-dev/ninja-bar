@@ -27,7 +27,7 @@ const goodsService = {
     },
     // Фильтрация на сервере. Включает возможную сортировку для отфильтрованных страниц.
     filter: async (name, sort) => {
-        console.log("name ", name, "sort ", sort);
+        /*  console.log("name ", name, "sort ", sort); */
         const params =
             name || sort ? { filterBy: `${name}`, sortBy: `${sort}` } : {};
         const { data } = await httpService.get(goodsEndpoint, {

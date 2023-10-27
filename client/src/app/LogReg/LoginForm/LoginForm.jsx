@@ -15,6 +15,8 @@ const LogReg = () => {
         password: "",
         stayOn: false
     });
+    // Для активации классов валидации полей лишь по отправке формы
+    const [sent, setSent] = useState(false);
     //
     const [errorsObj, setErrors] = useState({});
     const location = useLocation();
@@ -68,6 +70,7 @@ const LogReg = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setSent(true);
         const isValid = validate();
         if (!isValid) return false; // если есть ошибки, отправки формы не будет
 
@@ -97,6 +100,7 @@ const LogReg = () => {
                     value={data.phone}
                     onChange={handleChange}
                     error={errorsObj.phone}
+                    sent={sent}
                 ></TextField>
                 <TextField
                     label="Пароль"
@@ -106,6 +110,7 @@ const LogReg = () => {
                     value={data.password}
                     onChange={handleChange}
                     error={errorsObj.password}
+                    sent={sent}
                 ></TextField>
                 <CheckBoxField
                     name="stayOn"

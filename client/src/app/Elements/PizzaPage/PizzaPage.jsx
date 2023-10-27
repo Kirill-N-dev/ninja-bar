@@ -12,7 +12,6 @@ const PizzaPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(filterGoods(truePathName));
-        console.log("случился Эффект");
     }, []);
 
     // передаю строки типа "pizzas"

@@ -12,7 +12,6 @@ const DrinkPage = () => {
 
     useEffect(() => {
         dispatch(filterGoods(truePathName));
-        console.log("случился Эффект");
     }, []);
 
     return <GoodsList pathname={truePathName} />;
