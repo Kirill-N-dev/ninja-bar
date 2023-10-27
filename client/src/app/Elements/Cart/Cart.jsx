@@ -69,7 +69,7 @@ const Cart = () => {
             const itemOfCart = user?.cart?.filter((c) => {
                 return c.id === g._id;
             });
-            if (itemOfCart[0]) {
+            if (itemOfCart && itemOfCart[0]) {
                 const pcs = itemOfCart[0].pcs;
                 const price = g.price;
                 console.log("!!!", pcs);
@@ -162,7 +162,7 @@ const Cart = () => {
                 })
             );
             // Очистка общего флажка
-            setToggle((prev) => ({ ...prev, selectAll: !prev.selectAll }));
+            setToggle((prev) => ({ ...prev, selectAll: false }));
             // Возврат на первую страницу, иначе товаров не будет видно
             setPage(1);
         }

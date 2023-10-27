@@ -23,7 +23,7 @@ function CheckBoxField({ name, value, onChange, children, error, sent }) {
                 onChange={handleChange}
                 checked={value}
             />
-            <label className="form-check-label" htmlFor={name}>
+            <label className="form-check-label cursor" htmlFor={name}>
                 {children}
             </label>
             {error && <div className="invalid-feedback">{error}</div>}

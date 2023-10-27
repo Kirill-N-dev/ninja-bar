@@ -20,7 +20,7 @@ const store = createStore();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // получил ссылку на корень реакта. Туда буду скроллить.
-console.log("root", root._internalRoot.containerInfo);
+/* console.log("root", root._internalRoot.containerInfo); */
 const theRoot = root._internalRoot.containerInfo;
 
 // Делаю провайдер. И все эти муки ради доступа к руту при пагинации. Имхо просто найти в GoodsList домом и всё.

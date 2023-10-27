@@ -14,7 +14,6 @@ const SaucePage = () => {
     // Стейт меняется при нажатии на меню сортировки.
     useEffect(() => {
         dispatch(filterGoods(truePathName));
-        console.log("случился Эффект");
     }, []);
 
     return <GoodsList pathname={truePathName} />;
