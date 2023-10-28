@@ -289,7 +289,7 @@ const Administration = () => {
                                                 >
                                                     <img
                                                         src={g.img_url[0]}
-                                                        className="card-img-top"
+                                                        className="card-img-top cursor"
                                                         alt={g.name}
                                                         style={{
                                                             width: "100px",
@@ -297,6 +297,14 @@ const Administration = () => {
                                                         }}
                                                         data-resize="mq-746"
                                                         data-hide="mq-500"
+                                                        onClick={() =>
+                                                            navigate(
+                                                                "/" +
+                                                                    path +
+                                                                    "/" +
+                                                                    g._id
+                                                            )
+                                                        }
                                                     />
                                                 </div>
 
