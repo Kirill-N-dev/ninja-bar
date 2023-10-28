@@ -95,12 +95,21 @@ body,
 .cursor {
     cursor: pointer !important;
 }
-.mt-n2 {
-    margin-top: -0.5rem !important;
+.mt-n7 {
+    margin-top: -1.75rem !important;
+}
+.mt-xl-n7 {
+    margin-top: -0.25rem !important;
 }
 .borderRightFix {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+}
+
+@media (max-width: 1200px) {
+    .mt-n7 {
+        margin-top: -0.25rem !important;
+    }
 }
 
 @media (max-width: 1142px) {
