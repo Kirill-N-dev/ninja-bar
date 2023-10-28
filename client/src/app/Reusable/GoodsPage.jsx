@@ -98,10 +98,10 @@ const GoodsPage = () => {
                                     src={i}
                                     className={
                                         active === ind
-                                            ? "mt-4 border border-2 rounded-2"
-                                            : "mt-4"
+                                            ? "mt-4 cursor border border-2 rounded-2"
+                                            : "mt-4 cursor"
                                     }
-                                    alt="..."
+                                    alt="goods-small"
                                     style={{ width: "100px" }}
                                     data-order={ind}
                                     onClick={(target) => handleToggle(target)}
@@ -153,7 +153,7 @@ const GoodsPage = () => {
                                     >
                                         <img
                                             src={g}
-                                            alt="..."
+                                            alt="goods-medium"
                                             className="img-fluid"
                                         />
                                     </div>
