@@ -160,7 +160,7 @@ const Administration = () => {
 
     if (!isSeller) navigate("/");
     else {
-        goods.map((g) => toggleArr.push(g._id));
+        goods.length && goods.map((g) => toggleArr.push(g._id));
         return paginatedGoods.length ? (
             <>
                 <form onSubmit={handleSubmit} data-min-width="mq-746">

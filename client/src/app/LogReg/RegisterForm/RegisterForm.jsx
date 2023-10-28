@@ -72,9 +72,9 @@ const RegisterForm = () => {
             style={{ width: "400px" }}
             onSubmit={handleSubmit}
         >
-            <h2 className="card-title text-center mb-4">
+            <p className="card-title fs-5 text-center mb-4">
                 Для совершения покупок необходимо зарегистрироваться
-            </h2>
+            </p>
             <TextField
                 label="Имя"
                 name="name"

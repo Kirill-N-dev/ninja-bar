@@ -35,7 +35,7 @@ const PersonalArea = () => {
             >
                 {currentUserName}
             </a>
-            <ul className="dropdown-menu mt-n2">
+            <ul className="dropdown-menu mt-n7">
                 {isSeller ? (
                     <>
                         <li>

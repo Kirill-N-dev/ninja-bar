@@ -92,7 +92,9 @@ const LogReg = () => {
                 style={{ width: "400px" }}
                 onSubmit={handleSubmit}
             >
-                <h2 className="card-title text-center mb-4">Вход в систему</h2>
+                <p className="card-title fs-5 text-center mb-4">
+                    Вход в систему
+                </p>
                 <TextField
                     label="Телефон"
                     id="phone"
