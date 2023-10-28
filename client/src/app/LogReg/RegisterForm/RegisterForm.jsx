@@ -132,6 +132,8 @@ const RegisterForm = () => {
                 onChange={handleChange}
                 value={data.sex}
                 label="Укажите ваш пол"
+                error={errorsObj.sex}
+                sent={sent}
             />
 
             <TextField

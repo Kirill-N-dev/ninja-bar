@@ -131,5 +131,10 @@ export const validatorConfig = {
         isRequired: {
             message: "Добавьте описание"
         }
+    },
+    type: {
+        isRequired: {
+            message: "Выберите тип"
+        }
     }
 };
