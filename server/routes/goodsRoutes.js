@@ -217,10 +217,24 @@ goodsRoutes.delete("/:uid", middlewareForAuth, async (req, res) => {
     if (isSeller) {
       /*  console.log(44);
       console.log(999, uid, idsForDelete); */
-      // Удаляю товары итерацией
-      idsForDelete.map(async (i) => await Goods.findByIdAndDelete(i));
-      // Возвращаю оставшиеся товары, т.к при взаимодействии юзера и сервера надо обновлять данные
+
+      // Удаляю товары итерацией (попаболь, многочасовой дебаг и гуглёжь)
+
+      // НЕ РАБОТАЕТ, А ПАРАМЕТРОВ ТИПА NEW TRUE ТУТ НЕТ
+      /* idsForDelete.map(
+        async (i) => await Goods.findByIdAndDelete(i)
+      ); */
+
+      // ТОЖЕ НЕ РАБОТАЕТ, ТОЖЕ НЕ ОБНОВЛЯЕТ ДАННЫЕ
+      /* idsForDelete.map(async (i) => {
+        await Goods.deleteOne({ _id: i });
+      }); */
+
+      // Алилуйя!
+      await Goods.deleteMany({ _id: { $in: idsForDelete } });
       const newGoods = await Goods.find();
+
+      // Возвращаю оставшиеся товары, т.к при взаимодействии юзера и сервера надо обновлять данные
       res.status(200).send(newGoods);
     } else {
       /*   console.log(55); */
