@@ -187,6 +187,7 @@ const PersonalData = () => {
                     value={data.city}
                     onChange={handleChange}
                     error={errorsObj.city}
+                    sent={sent}
                 ></TextField>
 
                 <TextField

@@ -1,11 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RadioField = ({ options, name, onChange, value, label }) => {
+const RadioField = ({ options, name, onChange, value, label, error, sent }) => {
     //
     const handleChange = (ev) => {
         onChange({ name: ev.target.name, value: ev.target.value });
     };
+
+    const getInputClasses = () =>
+        // Усовершенствовал данную форму. Теперь отображение стилей адекватное.
+        // borderRightFix обязателен, это фикс для бутстрапа.
+        // ps Насколько выяснил, золотая заливка у инпута появляется, если при логине выбрать сохранённые данные.
+        // Похоже это стиль кеша и не баг. Тогда оставлю.
+        `form-check-input cursor${
+            sent && error ? " is-invalid" : sent ? " is-valid" : ""
+        }`;
+
     return (
         <div className="mb-4">
             <div>
@@ -19,7 +29,7 @@ const RadioField = ({ options, name, onChange, value, label }) => {
                         key={opt.name}
                     >
                         <input
-                            className="form-check-input cursor"
+                            className={getInputClasses()}
                             type="radio"
                             name={name}
                             id={opt.name + "_" + opt.value}
@@ -45,7 +55,9 @@ RadioField.propTypes = {
     name: PropTypes.string,
     onChange: PropTypes.func,
     value: PropTypes.string,
-    label: PropTypes.string
+    label: PropTypes.string,
+    error: PropTypes.string,
+    sent: PropTypes.bool
 };
 
 export default RadioField;

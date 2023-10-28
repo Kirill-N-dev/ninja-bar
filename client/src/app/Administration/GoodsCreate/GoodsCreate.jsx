@@ -70,6 +70,7 @@ const GoodsCreate = () => {
         e.preventDefault();
         setSent(true);
         const isValid = validate();
+        console.log(data);
         if (!isValid) return;
         /* console.log(123, data); */ // {}, то же, что в проверочном эффекте выше, но заполненное + img_url это []
         dispatch(createGoods({ data, navigate })); // не смог сделать тут, потому там
@@ -155,6 +156,8 @@ const GoodsCreate = () => {
                     onChange={handleChange}
                     value={data.type}
                     label="Выберите тип из существующих"
+                    error={errorsObj.type}
+                    sent={sent}
                 />
 
                 <button className="btn btn-primary w-100 mx-auto">
