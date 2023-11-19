@@ -5,12 +5,15 @@ export const themeChanger = (ev) => {
         ev.target.tagName === "svg" ||
         ev.target.dataset.purpose === "themeChanger"
     ) {
-        if (localStorage.getItem("theme") !== "dark") {
-            document.documentElement.setAttribute("data-bs-theme", "dark");
+        let lsTheme = localStorage.getItem("theme");
+        if (lsTheme === "light") {
             localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.removeAttribute("data-bs-theme");
-            localStorage.removeItem("theme");
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+            return (lsTheme = "dark");
+        } else if (lsTheme === "dark") {
+            localStorage.setItem("theme", "light");
+            document.documentElement.setAttribute("data-bs-theme", "light");
+            return (lsTheme = "light");
         }
     }
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -19,10 +19,12 @@ import { paginate } from "../../utils/paginate";
 import _ from "lodash";
 import { useRoot } from "../../..";
 import Pagination from "../../utils/Pagination";
+import { ThemeContext } from "../../HOC/WithThemes";
 
 const Cart = () => {
     const [toggle, setToggle] = useState({ init: false, selectAll: false }); // id флажка и его стейт
     const [data, setData] = useState({}); // id товара и его количество
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -34,6 +36,25 @@ const Cart = () => {
 
     const user = useSelector(getCurrentUserData());
     const navigate = useNavigate();
+
+    // Смена цвета блока оформления заказа в зависимости от установленной темы.
+    // Попытки сделать это вовне was failed. Т.к здесь нет нативного ДОМа и нельзя найти элемент по id.
+    const blockFromCart = useRef(null);
+    const value = useContext(ThemeContext); // получаю объект стейта и сетСтейта (кастомный хук - HOC)
+    const { theme } = value;
+
+    useEffect(() => {
+        // При первичном рендере каррент равен null, а текущий появится лишь после вторичного рендера.
+        // Потому первичный цвет, в зависимости от темы в ЛС, я задал динамически ниже.
+        // А последующие клики по "сменить тему" вызывают вторичный рендер, активируя данный эффект.
+        if (blockFromCart.current) {
+            if (theme === "light") {
+                blockFromCart.current.style.background = "#ffffff";
+            } else if (theme === "dark") {
+                blockFromCart.current.style.background = "#212529";
+            }
+        }
+    }, [theme]);
 
     const isLoggedInUser = useSelector(getCurrentUserId());
     /*     const isLoggedInUserData = useSelector(getCurrentUserData()); */
@@ -561,34 +582,56 @@ const Cart = () => {
                             </div>
 
                             <div
-                                className="d-flex flex-column flex-shrink-0"
+                                className="flex-shrink-0"
                                 style={{
-                                    width: "340px"
-                                    /* backgroundColor: "blue" */
+                                    width: "340px",
+                                    background:
+                                        localStorage.getItem("theme") === "dark"
+                                            ? "#212529"
+                                            : "#ffffff"
                                 }}
                                 data-position="mq-1094"
+                                ref={blockFromCart}
                             >
                                 <div
-                                    className="d-flex flex-row align-self-center justify-content-between align-items-center"
+                                    className="d-flex flex-column flex-shrink-0 position-fixed"
+                                    data-reposition="mq-1094"
                                     style={{
-                                        width: "300px"
+                                        right: "32px",
+                                        top: "130px"
                                     }}
                                 >
-                                    <span>Итого</span>
-                                    <h5 className="text text-success">
-                                        {totalPrice} ₽
-                                    </h5>
+                                    <div
+                                        className="d-flex flex-row align-self-center justify-content-between align-items-center"
+                                        style={{
+                                            width: "300px"
+                                        }}
+                                    >
+                                        <span>Итого</span>
+                                        <h5 className="text text-success">
+                                            {totalPrice} ₽
+                                        </h5>
+                                    </div>
+                                    <div
+                                        className="align-self-center ppp"
+                                        style={{
+                                            width: "300px"
+                                        }}
+                                    >
+                                        <button
+                                            className="btn btn-success align-self-center mt-2 mb-3"
+                                            style={{
+                                                width: "300px"
+                                            }}
+                                            type="button"
+                                            onClick={() =>
+                                                navigate("/user/orders")
+                                            }
+                                        >
+                                            Оформить заказ
+                                        </button>
+                                    </div>
                                 </div>
-                                <button
-                                    className="btn btn-success align-self-center mt-2 mb-3"
-                                    style={{
-                                        width: "300px"
-                                    }}
-                                    type="button"
-                                    onClick={() => navigate("/user/orders")}
-                                >
-                                    Оформить заказ
-                                </button>
                             </div>
                         </div>
                     </div>

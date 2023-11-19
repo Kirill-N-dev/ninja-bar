@@ -8,7 +8,7 @@ import iObserver from "../API/iObserver";
 import { loadAuthorizedUser } from "../../store/users";
 import { getUserByFirebaseId } from "../../services/localStorageService";
 
-const AppLoader = ({ children }) => {
+const WithAppLoader = ({ children }) => {
     const dispatch = useDispatch();
     // Логика приложения:
     // Авторизация хранится в ЛС. Оттуда попадает в стор.
@@ -33,11 +33,11 @@ const AppLoader = ({ children }) => {
     return children;
 };
 
-AppLoader.propTypes = {
+WithAppLoader.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ])
 };
 
-export default AppLoader;
+export default WithAppLoader;

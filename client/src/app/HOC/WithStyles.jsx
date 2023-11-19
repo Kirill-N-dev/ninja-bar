@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const WithStyleWrapper = ({ elements }) => {
+const WithStyles = ({ elements }) => {
     // Для прижатия футера
     return <div className="flex-grow-1">{elements}</div>;
 };
 
-WithStyleWrapper.propTypes = {
+WithStyles.propTypes = {
     elements: PropTypes.object
 };
 
-export default WithStyleWrapper;
+export default WithStyles;

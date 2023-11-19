@@ -111,10 +111,20 @@ body,
         margin-top: -0.25rem !important;
     }
 }
-
+/* работа */
 @media (max-width: 1142px) {
     [data-position="mq-1094"] {
         width: 100% !important;
+        height: 94px;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        position: sticky !important;
+        top: 0;
+        overflow: hidden !important;
+    }
+    [data-reposition="mq-1094"] {
+        position: initial !important;
     }
     [data-order="mq-1094"] {
         flex-direction: column-reverse;

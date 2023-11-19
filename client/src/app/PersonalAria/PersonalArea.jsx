@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUserData, logOut } from "../../store/users";
 import { useLocation, useNavigate } from "react-router";
 import { themeChanger } from "../../utils/themeChanger";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../HOC/WithThemes";
 
 const PersonalArea = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
+
+    // получаю объект стейта и сетСтейта, буду изменять при кликах ниже
+    const { theme, setTheme } = useContext(ThemeContext);
+    console.log("затычка", theme);
 
     // Без проверки ошибка
     const currentUserName = useSelector(getCurrentUserData())?.name;
@@ -87,7 +92,10 @@ const PersonalArea = () => {
                     <a
                         className="dropdown-item"
                         data-purpose="themeChanger"
-                        onClick={(ev) => themeChanger(ev)}
+                        onClick={(ev) => {
+                            const lsTheme = themeChanger(ev);
+                            setTheme(lsTheme);
+                        }}
                     >
                         Сменить тему
                     </a>

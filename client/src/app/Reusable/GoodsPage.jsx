@@ -15,7 +15,7 @@ import {
 } from "../../store/users";
 
 const GoodsPage = () => {
-    //
+    // Состояние текущей пикчи слайдера
     const [active, setActive] = useState(0);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -57,9 +57,12 @@ const GoodsPage = () => {
     const handleToggle = ({ target }) => {
         const { order } = target.dataset;
         const bsSlide = target.closest("button")?.dataset.bsSlide; // интересно, что с деструктуризацией тут баг
-
+        // Нажатие на пикчу (order это стринг) и добавление оной в выдаче
         if (order) {
             setActive(+order);
+            // Нажатие на кнопки вперёд и назад
+            // Проблема с каруселью на стороне бутстрапа, так как при частых кликах
+            // появляются 2 пикчи с классом active. Лечение не помогло. Лечить надо было сам бутстрап.
         } else {
             if (bsSlide === "next") {
                 if (goods.img_url.length !== active + 1) {
@@ -67,6 +70,12 @@ const GoodsPage = () => {
                 } else {
                     setActive(0);
                 }
+                // Попытка лечения бутстрапа
+                /* const lastIndex = active - 1;
+                const lastPicture = document.querySelectorAll(
+                    `div[data-order]:not(div[data-order='${lastIndex}'])`
+                );
+                lastPicture.forEach((i) => i.removeAttribute("active")); */
             } else {
                 if (bsSlide === "prev") {
                     if (active !== 0) {
@@ -80,13 +89,11 @@ const GoodsPage = () => {
         }
     };
 
-    /* console.log("goods", goods); */
-
     // Ниже проверка на то, что в сторе. Если переход со страниц товаров, то в сторе массив. А нам надо ждать {}
     if (Array.isArray(goods) || goodsStatus) return <Loader />;
     return (
         <div className="container-fluid mt-1 mt-sm-2 mt-md-3 mt-lg-4 mt-xl-5 mt-xxl-6">
-            <div className="card border-0" /* style={{ maxWidth: "540px" }} */>
+            <div className="card border-0">
                 <div className="row g-0 justify-content-center">
                     <div
                         className="col flex-grow-0 mx-1 mx-sm-2 mx-md-3 mx-lmx-4 mx-xl-5 mx-xxl-6"
@@ -150,6 +157,7 @@ const GoodsPage = () => {
                                                 : "carousel-item"
                                         }
                                         key={ind}
+                                        data-order={ind}
                                     >
                                         <img
                                             src={g}
